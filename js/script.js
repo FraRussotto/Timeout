@@ -47,6 +47,7 @@ function answer() {
   }
 
   match();
+  endGame();
 }
 
 function match() {
@@ -57,4 +58,8 @@ function match() {
     }
     console.log(numMatchArray);
     console.log(numMatch)
+}
+
+function endGame(){
+  message.innerHTML = `Hai totalizzato ${numMatch} punti indovinando i seguenti numeri: ${numMatchArray.join('-')}.`
 }
