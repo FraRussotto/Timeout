@@ -27,6 +27,7 @@ for(let i = 0; i < 5; i++){
 console.log(numRandomArray)
 
 watch();
+const myTimeout = setTimeout(answer, 5500);
 
 // FUNZIONI
 
@@ -39,3 +40,11 @@ function watch() {
     }
   }, 1000)
 }
+
+function answer() {
+  for(let i = 0; i < 5; i++){
+    let insertNum = parseInt(prompt('Inserisci i numeri che ricordi'));    numUserArray.push(insertNum);
+  }
+  console.log(numUserArray)
+}
+
