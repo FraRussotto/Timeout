@@ -22,8 +22,8 @@ let counter = whatchTime;
 for(let i = 0; i < 5; i++){
   let numRandom = Math.ceil(Math.random() * 20);
   numRandomArray.push(numRandom)
-  numList.innerHTML += `${numRandomArray[i]}` + '  ';
 }
+numList.innerHTML += `${numRandomArray.join('-')}`;
 console.log(numRandomArray)
 
 watch();
