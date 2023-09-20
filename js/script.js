@@ -45,6 +45,16 @@ function answer() {
   for(let i = 0; i < 5; i++){
     let insertNum = parseInt(prompt('Inserisci i numeri che ricordi'));    numUserArray.push(insertNum);
   }
-  console.log(numUserArray)
+
+  match();
 }
 
+function match() {
+  for(let i = 0; i < numUserArray.length; i++)
+    if(numRandomArray.includes(numUserArray[i])) {
+      numMatchArray.push(numUserArray[i]);
+      numMatch++
+    }
+    console.log(numMatchArray);
+    console.log(numMatch)
+}
