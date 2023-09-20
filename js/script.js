@@ -1,12 +1,41 @@
 //1. Creo un array che contenga la lista dei numeri che poi stampo direttamente a schermo.
 
-const numList = document.querySelector('h1');
+//2. Mostra a video la lista di numeri solo per 5 secondi.
 
-const numArray = [];
+//3. Chiedere all'user di inserire i numeri che ricorda.
+
+//4. Confrontare i numeri inseriti dall'utente con quelli generati in partenza.
+
+//5. Stampare a video i risultati creando un'ulteriore funzione.
+
+const numList = document.querySelector('h1');
+const numRandomArray = [];
+const numUserArray = [];
+const numMatchArray = [];
+let numMatch = 0;
+let message = document.querySelector('span');
+
+
+const whatchTime = 5;
+let counter = whatchTime;
 
 for(let i = 0; i < 5; i++){
   let numRandom = Math.ceil(Math.random() * 20);
-  numArray.push(numRandom)
-  numList.innerHTML += `${numArray[i]}` + '  ';
+  numRandomArray.push(numRandom)
+  numList.innerHTML += `${numRandomArray[i]}` + '  ';
 }
-console.log(numArray)
+console.log(numRandomArray)
+
+watch();
+
+// FUNZIONI
+
+function watch() {
+  const clock = setInterval(function() {
+    counter--;
+    if (counter === 0) {
+      numList.classList.add('d-none')
+      clearInterval(clock)
+    }
+  }, 1000)
+}
